@@ -1,38 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align='center'>Ignite Shop</h1>
 
-## Getting Started
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/43352880/233742200-73007920-4994-4575-88f8-47e9564c5eab.png' alt='Ignite Shop' />
+</p>
 
-First, run the development server:
+<p  align='center'>
+  <img src='https://img.shields.io/badge/license-MIT-%23835afd' alt='License' />
+  <img src='https://img.shields.io/badge/forks-MIT-%23835afd' alt='Forks' />
+  <img src='https://img.shields.io/badge/stars-MIT-%23835afd' alt='Stars' />
+</p>
+
+<br>
+
+## 💻 Projeto
+
+[Ignite Shop](https://ignite-shop-sooty.vercel.app/) é o quarto projeto e desafio desenvolvido durante o bootcamp ignite da [Rocketseat](https://www.rocketseat.com.br/) que foca nas tecnologias ReactJS, React Native e NodeJS. Consiste em criar uma página de ecomerce para vender algumas camiseras, nesse projeto estamos utilizando o Next.js, criamos o carrinho para adicionar e remover produtos, integramos com Stripe para fazer o checkout e realizar a compra na nossa plataforma.
+
+## 🧪 Technologies
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [ReactJS](https://reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Phosphor React](https://phosphoricons.com/)
+- [Stitches](https://stitches.dev/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [RadixUI - React Dialog](https://www.radix-ui.com/)
+- [Embla Carousel React](https://www.embla-carousel.com/get-started/react/)
+- [Stripe](https://stripe.com/docs/api)
+
+## 🚀 Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  # Clone o repositório e entre na pasta do projeto
+  $ git clone https://github.com/RayanneRamos/ignite-shop.git
+  $ cd ignite-shop
+  # Instale as dependências
+  $ npm install
+  # ou
+  $ yarn install
+  # Execute a aplicação
+  $ npm run dev
+  # ou
+  $ yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000 no seu navegador para ver a aplicação rodando!
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🔖 Layout
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [Layout Web](<https://www.figma.com/file/lsx1g8dVScHQJRvZZUVvpK/Ignite-Shop-2.0-(Copy)?node-id=11%3A599&t=puMIsO8zAJRy3qLg-1>)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📝 License
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para obter mais detalhes.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align='center'>Criado by Rayanne Ramos</p>
