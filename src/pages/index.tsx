@@ -7,14 +7,12 @@ import Link from 'next/link'
 import Head from 'next/head';
 import useEmblaCarousel from "embla-carousel-react";
 import { CartButton } from "../components/CartButton";
+import { useCart } from "../hooks/useCart";
+import { IProduct } from "../contexts/CartContext";
+import { MouseEvent } from "react";
 
 interface HomeProps {
-  products: {
-    id: string;
-    name: string;
-    imageUrl: string;
-    price: string;
-  }[]
+  products: IProduct[];
 }
 
 export default function Home({ products }: HomeProps) {
@@ -23,6 +21,12 @@ export default function Home({ products }: HomeProps) {
     skipSnaps: false,
     dragFree: true,
   });
+  const { addToCart } = useCart();
+
+  function handleAddToCart(event: MouseEvent<HTMLButtonElement>, product: IProduct) {
+    event.preventDefault();
+    addToCart(product);
+  }
   
   return (
     <>
@@ -43,7 +47,7 @@ export default function Home({ products }: HomeProps) {
                           <strong>{product.name}</strong>
                           <span>{product.price}</span>
                         </div>
-                        <CartButton size="large" color="green" />
+                        <CartButton size="large" color="green" onClick={(event) => handleAddToCart(event, product)} />
                       </footer>
                     </Product>
                   </Link>
