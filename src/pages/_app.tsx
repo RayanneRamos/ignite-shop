@@ -1,14 +1,14 @@
-import type { AppProps } from 'next/app'
-import { Roboto } from 'next/font/google'
-import { globalStyles } from '../styles/global'
-import { Container } from '../styles/pages/app';
-import { Header } from '../components/Header';
-import { CartContextProvider } from '../contexts/CartContext';
+import type { AppProps } from "next/app"
+import { Roboto } from "next/font/google"
+import { globalStyles } from "../styles/global"
+import { Container } from "../styles/pages/app";
+import { Header } from "../components/Header";
+import { CartContextProvider } from "../contexts/CartContext";
 
 const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal'],
-  subsets: ['latin']
+  weight: ["400", "700"],
+  style: ["normal"],
+  subsets: ["latin"]
 })
 
 globalStyles();

@@ -1,9 +1,8 @@
 import { CartButton } from "../CartButton";
-import * as Dialog from '@radix-ui/react-dialog';
+import * as Dialog from "@radix-ui/react-dialog";
 import { CartClose, CartContent, CartProduct, CartProductImage, CartProductDetails, CartFinalization, FinalizationDetails } from "./styles";
 import { X } from "phosphor-react";
 import Image from "next/image";
-import shirtImage from '../../assets/4.png';
 import { useCart } from "@/src/hooks/useCart";
 import { useState } from "react";
 import axios from "axios";
@@ -11,9 +10,9 @@ import axios from "axios";
 export function Cart() {
   const { cartItems, removeCartItem, cartTotal } = useCart();
   const cartQuantity = cartItems.length;
-  const formattedCartTotal = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
+  const formattedCartTotal = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
   }).format(cartTotal);
   const [ isCreatingCheckoutSession, setIsCreatingCheckoutSession ] = useState(false);
 
@@ -21,7 +20,7 @@ export function Cart() {
     try {
       setIsCreatingCheckoutSession(true);
 
-      const response = await axios.post('/api/checkout', {
+      const response = await axios.post("/api/checkout", {
         products: cartItems,
       });
 
@@ -30,7 +29,7 @@ export function Cart() {
       window.location.href =  checkoutUrl;
     } catch(error) {
       setIsCreatingCheckoutSession(false);
-      alert('Falha ao redirecionar ao checkout');
+      alert("Falha ao redirecionar ao checkout");
     }
   }
   
@@ -54,7 +53,7 @@ export function Cart() {
                       <Image 
                         width={100} 
                         height={93} 
-                        alt='shirt'
+                        alt={cartItem.name}
                         src={cartItem.imageUrl}
                       />
                     </CartProductImage>
@@ -71,7 +70,7 @@ export function Cart() {
             <FinalizationDetails>
               <div>
                 <span>Quantidade</span>
-                <p>{cartQuantity} { cartQuantity === 1 ? 'item' : 'itens' }</p>
+                <p>{cartQuantity} { cartQuantity === 1 ? "item" : "itens" }</p>
               </div>
               <div>
                 <span>Valor Total</span>

@@ -2,11 +2,9 @@ import { IProduct } from "@/src/contexts/CartContext";
 import { useCart } from "@/src/hooks/useCart";
 import { stripe } from "@/src/lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from "@/src/styles/pages/product"
-import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
 import Stripe from "stripe";
 
 interface ProductProps {
@@ -31,7 +29,7 @@ export default function Product({ product }: ProductProps) {
           <span>{product.price}</span>
           <p>{product.description}</p>
           <button disabled={itemAlreadyInCart} onClick={() => addToCart(product)}>
-            { itemAlreadyInCart ? 'Produto já está no carrinho' : 'Colocar no carrinho' }
+            { itemAlreadyInCart ? "Produto já está no carrinho" : "Colocar no carrinho" }
           </button>
         </ProductDetails>
       </ProductContainer>
@@ -42,16 +40,16 @@ export default function Product({ product }: ProductProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { id: 'prod_Nk9NOb4zaTfLLx' } }
+      { params: { id: "prod_Nk9NOb4zaTfLLx" } }
     ],
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ params }) => {
   const productId = params!.id;
   const product = await stripe.products.retrieve(productId, {
-    expand: ['default_price'],
+    expand: ["default_price"],
   });
 
   const price = product.default_price as Stripe.Price;
@@ -62,9 +60,9 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ para
         id: product.id,
         name: product.name,
         imageUrl: product.images[0],
-        price: new Intl.NumberFormat('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
+        price: new Intl.NumberFormat("pt-BR", {
+          style: "currency",
+          currency: "BRL",
         }).format(price.unit_amount! / 100),
         description: product.description,
         defaultPriceId: price.id,

@@ -16,21 +16,21 @@ export default function Success({ customerName, productsImages }: SuccessProps) 
     <>
       <Head>
         <title>Compra efetuada | Ignite Shop</title>
-        <meta name='robots' content='noindex' />
+        <meta name="robots" content="noindex" />
       </Head>
       <SuccessContainer>
         <ImagesContainer>
           { productsImages.map((image, index) => {
             return (
               <ImageContainer key={index}>
-                <Image src={image} width={120} height={110} alt='' />
+                <Image src={image} width={120} height={110} alt={customerName} />
               </ImageContainer>
             )
           }) }
         </ImagesContainer>
         <h1>Compra efetuada!</h1>
         <p>Uhuul <strong>{customerName}</strong>, sua compra de {productsImages.length} camisetas já está a caminho da sua casa.</p>
-        <Link href='/'>
+        <Link href="/">
           Voltar ao catálogo
         </Link>
       </SuccessContainer>
@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   if(!query.session_id) {
     return {
       redirect: {
-        destination: '/',
+        destination: "/",
         permanent: false,
       }
     }
@@ -51,7 +51,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const sessionId = String(query.session_id);
 
   const session = await stripe.checkout.sessions.retrieve(sessionId, {
-    expand: ['line_items', 'line_items.data.price.product'],
+    expand: ["line_items", "line_items.data.price.product"],
   });
 
   const customerName = session.customer_details.name;

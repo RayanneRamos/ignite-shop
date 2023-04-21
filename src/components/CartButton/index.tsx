@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import { CartButtonContainer } from "./styles";
-import { Handbag } from 'phosphor-react';
+import { Handbag } from "phosphor-react";
 
 type CartButtonProps = ComponentProps<typeof CartButtonContainer>;
 
