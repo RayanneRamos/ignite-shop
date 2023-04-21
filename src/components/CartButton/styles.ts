@@ -20,6 +20,6 @@ export const CartButtonContainer = styled('button', {
   height: '3rem',
 
   svg: {
-    fontSize: 24,
+    fontSize: '$xl',
   }
 });
