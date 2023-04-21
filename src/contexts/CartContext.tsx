@@ -12,6 +12,7 @@ export interface IProduct {
 
 interface CartContextData {
   cartItems: IProduct[];
+  addToCart: (product: IProduct) => void;
 }
 
 interface CartContextProviderProps {
@@ -23,8 +24,12 @@ export const CartContext = createContext({} as CartContextData);
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [ cartItems, setCartItems ] = useState<IProduct[]>([]);
 
+  function addToCart(product: IProduct) {
+    setCartItems((state) => [...state, product]);
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems }}>
+    <CartContext.Provider value={{ cartItems, addToCart }}>
       { children }
     </CartContext.Provider>
   );
