@@ -16,6 +16,13 @@
 
 [Ignite Shop](https://ignite-shop-sooty.vercel.app/) é o quarto projeto e desafio desenvolvido durante o bootcamp ignite da [Rocketseat](https://www.rocketseat.com.br/) que foca nas tecnologias ReactJS, React Native e NodeJS. Consiste em criar uma página de ecomerce para vender algumas camiseras, nesse projeto estamos utilizando o Next.js, criamos o carrinho para adicionar e remover produtos, integramos com Stripe para fazer o checkout e realizar a compra na nossa plataforma.
 
+## 🌟 Funcionalidades
+
+1. **Carrinho de compras, permitindo adicionar e remover produtos**
+2. **Integração com Stripe para processamento de pagamentos e checkout seguro** 
+3. **Desenvolvido com Next.js, aproveitando suas funcionalidades de renderização do lado do servidor para otimizar a performance**
+4. **Disponível para plataformas web, com uma interface amigável para o usuário final**
+
 ## 🧪 Technologies
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
