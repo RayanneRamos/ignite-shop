@@ -23,7 +23,7 @@
 3. **Desenvolvido com Next.js, aproveitando suas funcionalidades de renderização do lado do servidor para otimizar a performance**
 4. **Disponível para plataformas web, com uma interface amigável para o usuário final**
 
-## 🧪 Technologies
+## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
